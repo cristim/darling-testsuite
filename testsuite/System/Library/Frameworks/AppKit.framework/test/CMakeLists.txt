@@ -53,6 +53,18 @@ add_executable("${DARLING_IDENTIFIER}.test_NSCursor_initWithCoder" "NSCursor/tes
 target_link_libraries("${DARLING_IDENTIFIER}.test_NSCursor_initWithCoder" "-framework Foundation" "-framework AppKit" darling-testsuite-lib)
 add_test(NAME "${DARLING_PATH}/test_NSCursor_initWithCoder" COMMAND "${DARLING_IDENTIFIER}.test_NSCursor_initWithCoder")
 
+# NSEvent
+
+add_executable("${DARLING_IDENTIFIER}.test_NSEvent_mouseLocation_isInPoints" "NSEvent/test_NSEvent_mouseLocation_isInPoints.m")
+target_link_libraries("${DARLING_IDENTIFIER}.test_NSEvent_mouseLocation_isInPoints" "-framework Foundation" "-framework AppKit" darling-testsuite-lib)
+add_test(NAME "${DARLING_PATH}/test_NSEvent_mouseLocation_isInPoints" COMMAND "${DARLING_IDENTIFIER}.test_NSEvent_mouseLocation_isInPoints")
+
+# NSScreen
+
+add_executable("${DARLING_IDENTIFIER}.test_NSScreen_backingScaleFactor_isPointsBased" "NSScreen/test_NSScreen_backingScaleFactor_isPointsBased.m")
+target_link_libraries("${DARLING_IDENTIFIER}.test_NSScreen_backingScaleFactor_isPointsBased" "-framework Foundation" "-framework AppKit" darling-testsuite-lib)
+add_test(NAME "${DARLING_PATH}/test_NSScreen_backingScaleFactor_isPointsBased" COMMAND "${DARLING_IDENTIFIER}.test_NSScreen_backingScaleFactor_isPointsBased")
+
 # Misc
 
 add_executable("${DARLING_IDENTIFIER}.test_AppKit_variable" "test_AppKit_variable.m")
@@ -79,6 +91,12 @@ install(
         # NSCursor
         "${DARLING_IDENTIFIER}.test_NSCursor_encodeWithCoder"
         "${DARLING_IDENTIFIER}.test_NSCursor_initWithCoder"
+
+        # NSEvent
+        "${DARLING_IDENTIFIER}.test_NSEvent_mouseLocation_isInPoints"
+
+        # NSScreen
+        "${DARLING_IDENTIFIER}.test_NSScreen_backingScaleFactor_isPointsBased"
 
         # Misc
         "${DARLING_IDENTIFIER}.test_AppKit_variable"
